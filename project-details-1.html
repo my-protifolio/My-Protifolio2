@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل المشروع الأول</title>
+    <!-- ربط ملف الستايل الموحد بتاعك عشان ياخد نفس الألوان والتنسيقات -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        body {
+            background-color: #0f172a; /* لون خلفية داكن فخم يناسب معرض الصور */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .project-gallery-section {
+            padding: 80px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-gallery-section h2 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .project-gallery-section h2 span {
+            color: #ec4899; /* لمسة بينك أنيقة للهوية البصرية */
+        }
+
+        .project-gallery-section p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+
+        /* شبكة الصور (Grid) متجاوبة وبتظبط نفسها تلقائياً على كل الشاشات */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: zoom-in; /* مؤشر عدسة مكبرة يوضح إن الصورة بتكبر */
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.2);
+        }
+
+        /* زرار الرجوع للموقع الرئيسي */
+        .back-btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #ec4899, #be185d);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* ================= ستايل شاشة التكبير (Lightbox Modal) ================= */
+        .image-lightbox {
+            display: none; /* مخفي افتراضياً */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.95); /* خلفية سوداء شفافة مريحة للعين */
+            z-index: 99999; /* فوق كل عناصر الصفحة */
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* لما الشاشة تتفعل للجافاسكربت */
+        .image-lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        /* الصورة الكبيرة المفتوحة */
+        .image-lightbox img {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        /* تأثير تكبير ناعم عند الفتح */
+        .image-lightbox.active img {
+            transform: scale(1);
+        }
+
+        /* زرار إغلاق (X) في الأعلى */
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= Navbar السطر العلوي ================= -->
+    <!-- <nav class="navbar">
+        <div class="logo"><span>Helper</span> Emergency</div>
+    </nav> -->
+
+    <!-- ================= سكشن معرض الصور للمشروع الأول ================= -->
+    <section class="project-gallery-section">
+        <h2>Branding <span>Identity</span></h2>
+        <p>تفاصيل وعناصر الهوية البصرية الكاملة للمشروع الأول.</p>
+
+        <!-- شبكة عرض الـ 12 صورة -->
+        <div class="gallery-grid" id="gallery-grid-1">
+            <!-- الجافاسكربت هيرص الصور من 1 لـ 12 هنا فوراً وبشكل تلقائي -->
+        </div>
+
+        <!-- زرار يرجع اليوزر للصفحة الرئيسية بروقان -->
+<!-- زرار يرجع اليوزر لسكشن المشاريع فوراً -->
+<a href="index.html#projects" class="back-btn">➔ العودة للمشاريع</a>    </section>
+
+    <!-- ================= عنصر شاشة التكبير (Lightbox) ================= -->
+    <div id="lightbox" class="image-lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightbox-img" src="" alt="Zoomed Image">
+    </div>
+
+    <!-- ================= Footer تذييل الصفحة ================= -->
+    <footer class="footer">
+        <!-- حط هنا نفس محتوى الفوتر بتاع موقعك الأصلي -->
+        <p>&copy; 2026 جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- ================= كود رص الصور والتكبير الملقائي ================= -->
+    <script>
+        // هنا حددنا الترقيم يبدأ من 1 لحد 12 زي ما قولتلي بالظبط
+        const startImg = 61;
+        const endImg = 69;
+        const galleryGrid = document.getElementById('gallery-grid-1');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        // 1. توليد الصور ورصها داخل الشبكة
+        for (let i = startImg; i <= endImg; i++) {
+            const imgElement = document.createElement('img');
+            
+            // بيسحب تلقائياً من فولدر ph: ph/1.jpeg ، ph/2.jpeg ... وهكذا
+            imgElement.src = `ph/${i}.jpeg`; 
+            imgElement.alt = `Project Image ${i}`;
+            
+            // إضافة حدث الضغط لتكبير الصورة فوراً
+            imgElement.addEventListener('click', function() {
+                lightboxImg.src = this.src; // تمرير مسار الصورة المضغوطة للشاشة الكبيرة
+                lightbox.classList.add('active'); // تفعيل شاشة التكبير الأنيقة
+            });
+
+            galleryGrid.appendChild(imgElement);
+        }
+
+        // 2. إغلاق شاشة التكبير عند الضغط في أي مكان فاضي
+        lightbox.addEventListener('click', function() {
+            lightbox.classList.remove('active');
+        });
+    </script>
+
+</body>
+</html>

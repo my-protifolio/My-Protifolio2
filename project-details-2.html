@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل المشروع الثاني</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #0f172a;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .project-gallery-section {
+            padding: 80px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-gallery-section h2 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .project-gallery-section h2 span {
+            color: #ec4899;
+        }
+
+        .project-gallery-section p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: zoom-in;
+            /* بيخلي الماوس يظهر بشكل عدسة مكبرة تفتح النفس */
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.2);
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #ec4899, #be185d);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* ================= ستايل شاشة التكبير (Lightbox Modal) ================= */
+        .image-lightbox {
+            display: none;
+            /* مخفي افتراضياً */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.95);
+            /* خلفية سوداء شفافة فخمة */
+            z-index: 99999;
+            /* فوق كل عناصر الصفحة */
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+            /* الماوس يتحول لعدسة تصغير عند رغبة الغلق */
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* لما الشاشة تفتح */
+        .image-lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        /* الصورة الكبيرة المفتوحة */
+        .image-lightbox img {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        /* تأثير أنيق عند فتح الصورة */
+        .image-lightbox.active img {
+            transform: scale(1);
+        }
+
+        /* زرار إغلاق (X) في الأعلى */
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= Navbar ================= -->
+    <!-- <nav class="navbar">
+        <div class="logo"><span>Helper</span> Emergency</div>
+    </nav> -->
+
+    <!-- ================= سكشن معرض الصور ================= -->
+    <section class="project-gallery-section">
+        <h2>Social Media <span>Campaign</span></h2>
+        <p>الحملة الإعلانية والتصاميم المبتكرة للمنصات الرقمية للمشروع الثاني.</p>
+
+        <div class="gallery-grid" id="gallery-grid-2">
+            <!-- الصور هتنزل هنا تلقائياً -->
+        </div>
+
+        <!-- زرار يرجع اليوزر لسكشن المشاريع فوراً -->
+        <a href="index.html#projects" class="back-btn">➔ العودة للمشاريع</a>
+    </section>
+
+    <!-- ================= عنصر شاشة التكبير (Lightbox) ================= -->
+    <div id="lightbox" class="image-lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightbox-img" src="" alt="Zoomed Image">
+    </div>
+
+    <!-- ================= Footer ================= -->
+    <footer class="footer">
+        <p>&copy; 2026 جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- ================= كود الـ JavaScript ================= -->
+    <script {text-first-buffer-buffer-break-line-law}>
+        const startImg = 71;
+        const endImg = 82;
+        const galleryGrid = document.getElementById('gallery-grid-2');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        // 1. توليد الصور ورصها في الصفحة
+        for (let i = startImg; i <= endImg; i++) {
+            const imgElement = document.createElement('img');
+            imgElement.src = `ph/${i}.jpeg`;
+            imgElement.alt = `Project Image ${i}`;
+
+            // لما اليوزر يضغط على أي صورة تفتح في الـ Lightbox
+            imgElement.addEventListener('click', function () {
+                lightboxImg.src = this.src; // نقل مسار الصورة المفتوحة للشاشة الكبيرة
+                lightbox.classList.add('active'); // إظهار شاشة التكبير
+            });
+
+            galleryGrid.appendChild(imgElement);
+        }
+
+        // 2. قفل الشاشة لما يضغط في أي مكان فاضي أو على زرار الـ (X)
+        lightbox.addEventListener('click', function () {
+            lightbox.classList.remove('active');
+        });
+    </script>
+
+</body>
+
+</html>

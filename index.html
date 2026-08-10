@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>My Protifolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Dynamic Animated Background Canvas/Wrapper -->
+    <div class="animated-bg"></div>
+    <!-- 1. **NEW**: Flowers Falling Container -->
+    <div class="flowers-container" id="flowersContainer"></div>
+    <!-- 2. Dynamic Animated Background (من الخطوة اللي فاتت) -->
+    <div class="animated-bg"></div>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="#hero">Maloka<span></span></a>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+            <li class="mobile-hire-li">
+                <a href="#contact" class="btn">Hire Me</a>
+            </li>
+        </ul>
+
+        <!-- زرار Hire Me للشاشات الكبيرة -->
+        <div class="nav-btn">
+            <a href="#contact" class="hire-btn">Hire Me</a>
+        </div>
+
+        <!-- Toggle Button for Mobile -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-container">
+            <!-- Content Left -->
+            <div class="hero-content">
+                <span class="greeting">Welcome to my creative world</span>
+                <h1 class="hero-name">Hi, I'm <span>Malak Yusry</span></h1>
+                <h2 class="hero-title">Creative Graphic Designer</h2>
+                <p class="hero-description">
+                    Transforming bold ideas into captivating visual experiences. Specializing in brand identity, digital
+                    graphics, and creative art direction that speaks to the audience.
+                </p>
+                <div class="hero-btns">
+                    <a href="#contact" class="hire-btn"
+                        style="justify-content: center; align-items: center; align-content: center;">Hire Me</a>
+                    <a href="#" class="btn secondary-btn" download>Download CV</a>
+                </div>
+            </div>
+
+            <!-- Graphic Image Frame Right -->
+            <div class="hero-image-wrapper">
+                <div class="glowing-ring"></div>
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="hero-img-box">
+                    <!-- استبدل profile.jpg باسم صورة اختك -->
+                    <img src="https://iili.io/CgMokI1.jpg" alt="Malak Yusry - Graphic Designer">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-title">
+            <h2>About <span>Me</span></h2>
+            <p>Get to know more about my creative journey</p>
+        </div>
+
+        <div class="about-container">
+            <!-- About Image Frame Left -->
+            <div class="about-img-box">
+                <div class="about-img-card">
+                    <!-- استبدل about.jpg باسم الصورة الثانية -->
+                    <img src="https://iili.io/CgMhWD7.jpg" alt="Malak Yusry - About Image">
+                </div>
+                <div class="about-experience-badge">
+                    <span>1+</span>
+                    <p>Year of Experience</p>
+                </div>
+            </div>
+
+            <!-- About Content Right -->
+            <div class="about-content">
+                <!-- مثال: إضافة الكلاس للـ Sections أو الكروت -->
+                <section class="about reveal" id="about">
+                    <h3>Passionate Graphic Designer Crafting Visual Stories</h3>
+                    <p class="about-text">
+                        I am a dedicated Graphic Designer with a keen eye for aesthetics, typography, and color harmony.
+                        My goal is to transform ideas into compelling visual experiences that leave a lasting
+                        impression. Whether it's crafting unique brand identities, social media visuals, or creative
+                        marketing materials, I bring fresh perspectives and precision to every project.
+                    </p>
+
+                    <!-- Stats Counter Grid -->
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <h4>1+</h4>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>35+</h4>
+                            <p>Projects Done</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>5+</h4>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Education Section (Cards Version) -->
+    <section class="education reveal" id="education">
+        <div class="section-title">
+            <h2>My <span>Education</span></h2>
+            <p>My academic path and creative career evolution</p>
+        </div>
+
+        <div class="education-grid">
+            <!-- Card 1: 2026 -->
+            <div class="edu-card highlighted">
+                <div class="edu-card-header">
+                    <span class="edu-badge">2026</span>
+                    <div class="edu-icon">🎨</div>
+                </div>
+                <h3>Full-time Graphic Designer</h3>
+                <h4>Specialization & Professional Practice</h4>
+                <p>Focused completely on brand identity, graphics, and visual design to fulfill her true creative
+                    passion.</p>
+            </div>
+
+            <!-- Card 2: 2025 -->
+            <div class="edu-card">
+                <div class="edu-card-header">
+                    <span class="edu-badge">2025</span>
+                    <div class="edu-icon">🤖</div>
+                </div>
+                <h3>Arab Institute for Wireless Communications</h3>
+                <h4>AI Dept & Full-Stack Web Basics</h4>
+                <p>Graduated from the AI department. Learned Front-End & Back-End before shifting fully to design.</p>
+            </div>
+
+            <!-- Card 3: 2024 -->
+            <div class="edu-card">
+                <div class="edu-card-header">
+                    <span class="edu-badge">2024</span>
+                    <div class="edu-icon">💡</div>
+                </div>
+                <h3>Design Fundamentals</h3>
+                <h4>Self-Learning & Photoshop Mastery</h4>
+                <p>Initiated her graphic design journey by learning Photoshop fundamentals and digital artwork concepts.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Skills Section (Interactive TV & Switch) -->
+    <section class="skills reveal" id="skills">
+        <div class="section-title">
+            <h2>My <span>Skills</span></h2>
+            <p>Turn on the screen to reveal my creative toolkit</p>
+        </div>
+
+        <div class="tv-skills-container">
+            <!-- TV Screen Left -->
+            <div class="tv-wrapper">
+                <div class="tv-frame" id="tvScreen">
+                    <div class="tv-screen-content">
+                        <div class="screen-off-msg">
+                            <span>POWER OFF</span>
+                            <p>Flip the switch to turn on</p>
+                        </div>
+                        <div class="skills-grid">
+                            <div class="skill-tag"><span>Ps</span> Photoshop</div>
+                            <div class="skill-tag"><span>Ai</span> Illustrator</div>
+                            <div class="skill-tag"><span>Id</span> InDesign</div>
+                            <div class="skill-tag"><span>Fi</span> Figma</div>
+                            <div class="skill-tag">🎨 Branding</div>
+                            <div class="skill-tag">✒️ Typography</div>
+                            <div class="skill-tag">🖼️ Social Media</div>
+                            <div class="skill-tag">📐 Layout Design</div>
+                        </div>
+                    </div>
+                    <div class="tv-led" id="tvLed"></div>
+                </div>
+            </div>
+
+            <!-- Power Switch Right -->
+            <div class="switch-wrapper">
+                <div class="switch-box">
+                    <span class="switch-label">POWER</span>
+                    <label class="power-switch">
+                        <input type="checkbox" id="skillSwitch">
+                        <span class="switch-slider"></span>
+                    </label>
+                    <span class="switch-status" id="switchStatus">OFF</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+<!-- سكشن المشاريع في الصفحة الرئيسية -->
+<section class="projects reveal" id="projects">
+
+<div class="section-title">
+        <h2>My <span>Projects</span></h2>
+        <p>Explore my creative designs & visual artwork</p>
+    </div>
+
+
+
+  <!-- شبكة عرض المشاريع (Grid) -->
+    <div class="projects-grid">
+
+        <!-- كارت المشروع الأول -->
+        <a href="project-details-1.html" class="project-group-link">
+            <div class="project-bundle-card">
+                <div class="project-img-single">
+                    <!-- صورة غلاف المشروع الأول (مثلاً الصورة رقم 1) -->
+                    <img src="ph/67.jpeg" alt="Branding Identity Cover">
+                </div>
+                <div class="project-bundle-info">
+                    <h3>Branding Identity</h3>
+                    <p>اضغط لمشاهدة التفاصيل كاملة ➔</p>
+                </div>
+            </div>
+        </a>
+        <!-- كارت المشروع الثاني -->
+        <a href="project-details-2.html" class="project-group-link">
+            <div class="project-bundle-card">
+                <div class="project-img-single">
+                    <!-- صورة غلاف المشروع الثاني (مثلاً الصورة رقم 31) -->
+                    <img src="ph/81.jpeg" alt="Social Media Campaign Cover" >
+                </div>
+                <div class="project-bundle-info">
+                    <h3>Social Media Campaign</h3>
+                    <p>اضغط لمشاهدة التفاصيل كاملة ➔</p>
+                </div>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- سكشن المشاريع في الصفحة الرئيسية -->
+<section class="projects reveal" id="projects">
+  <!-- شبكة عرض المشاريع (Grid) -->
+    <div class="projects-grid">
+
+        <!-- كارت المشروع الأول -->
+        <a href="project-details-3.html" class="project-group-link">
+            <div class="project-bundle-card">
+                <div class="project-img-single">
+                    <!-- صورة غلاف المشروع الأول (مثلاً الصورة رقم 1) -->
+                    <img src="ph/41.jpeg" alt="Branding Identity Cover">
+                </div>
+                <div class="project-bundle-info">
+                    <h3>Branding Identity</h3>
+                    <p>اضغط لمشاهدة التفاصيل كاملة ➔</p>
+                </div>
+            </div>
+        </a>
+        <!-- كارت المشروع الثاني -->
+        <a href="project-details-4.html" class="project-group-link">
+            <div class="project-bundle-card">
+                <div class="project-img-single">
+                    <!-- صورة غلاف المشروع الثاني (مثلاً الصورة رقم 31) -->
+                    <img src="ph/53.jpeg" alt="Social Media Campaign Cover" >
+                </div>
+                <div class="project-bundle-info">
+                    <h3>Social Media Campaign</h3>
+                    <p>اضغط لمشاهدة التفاصيل كاملة ➔</p>
+                </div>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- سكشن المشاريع في الصفحة الرئيسية -->
+<section class="projects reveal" id="projects">
+    
+    <!-- شبكة عرض المشاريع (Grid) -->
+    <div class="projects-grid">
+
+        <!-- كارت المشروع الأول -->
+        <a href="project-details-5.html" class="project-group-link">
+            <div class="project-bundle-card">
+                <div class="project-img-single">
+                    <!-- صورة غلاف المشروع الأول (مثلاً الصورة رقم 1) -->
+                    <img src="ph/1.jpeg" alt="Branding Identity Cover">
+                </div>
+                <div class="project-bundle-info">
+                    <h3>Branding Identity</h3>
+                    <p>اضغط لمشاهدة التفاصيل كاملة ➔</p>
+                </div>
+            </div>
+        </a>
+
+        <!-- كارت المشروع الثاني -->
+        <a href="project-details-6.html" class="project-group-link">
+            <div class="project-bundle-card">
+                <div class="project-img-single">
+                    <!-- صورة غلاف المشروع الثاني (مثلاً الصورة رقم 31) -->
+                    <img src="ph/31.jpeg" alt="Social Media Campaign Cover">
+                </div>
+                <div class="project-bundle-info">
+                    <h3>Social Media Campaign</h3>
+                    <p>اضغط لمشاهدة التفاصيل كاملة ➔</p>
+                </div>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+    <!-- Connect Me Section -->
+    <section class="contact reveal" id="contact">
+        <div class="section-title">
+            <h2>Connect <span>With Me</span></h2>
+            <p>Have a project in mind or want to collaborate? Feel free to reach out!</p>
+        </div>
+
+        <div class="contact-container">
+            <!-- Contact Info Cards -->
+            <div class="contact-info">
+                <div class="info-card">
+                    <div class="info-icon">📧</div>
+                    <div class="info-details">
+                        <h4>Email Me</h4>
+                        <p>yourname@email.com</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <div class="info-details">
+                        <h4>Location</h4>
+                        <p>Asyut, Egypt</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">💼</div>
+                    <div class="info-details">
+                        <h4>Available For</h4>
+                        <p>Freelance & Full-time Roles</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form class="contact-form" id="contactForm">
+                <div class="input-group">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="subject" placeholder="Subject" required>
+                </div>
+                <div class="input-group">
+                    <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span>Send Message</span>
+                    <span class="btn-icon">🚀</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Short Minimal Footer -->
+    <footer class="compact-footer">
+        <div class="footer-content">
+            <!-- 1. Left Side: Navbar 6 Links -->
+            <ul class="footer-nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <!-- Middle: Social Icons with Links -->
+            <div class="footer-socials">
+                <!-- WhatsApp Icon -->
+                <a href="https://wa.me/201064953709" target="_blank" aria-label="WhatsApp" class="social-icon">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <!-- Facebook Icon -->
+                <a href="https://www.facebook.com/share/1BjSrS27e5/" target="_blank" aria-label="Facebook"
+                    class="social-icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <!-- Instagram Icon -->
+                <a href="https://www.instagram.com/mal_oka206?igsh=M2Y5dnM4Zmd2djgy" target="_blank"
+                    aria-label="Instagram" class="social-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
