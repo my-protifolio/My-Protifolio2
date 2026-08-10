@@ -1460,15 +1460,17 @@ background-clip: text;
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-
+    row-gap: 20px; /* مسافة صغيرة ومناسبة بين الصفوف الراسية */
+    column-gap: 30px; /* المسافة بين العواميد الجانبية */
     padding: 20px;
+    align-items: start; /* بيمنع مط الكروت رأسيًا */
 }
 
 .project-group-link {
     text-decoration: none;
     color: inherit;
     display: block;
+    margin: 0; /* إلغاء أي مارجن ممكن يعطل المسافة */
 }
 
 .project-bundle-card {
@@ -1477,6 +1479,7 @@ background-clip: text;
     overflow: hidden;
     border: 1px solid #333;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0; /* منع أي مارجن خارجي للارتفاع */
 }
 
 .project-bundle-card:hover {
