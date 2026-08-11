@@ -311,6 +311,7 @@ background-clip: text;
 }
 
 .hero-btns {
+
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
