@@ -95,32 +95,36 @@ if (hamburger && navLinks) {
 }
 
 
+// المراقبة الذكية للأقسام بدون مشاكل سكرول
+const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -60% 0px', // بيحدد بدقة الجزء اللي العميل بيبص عليه في الشاشة
+    threshold: 0
+};
 
-// Dynamic Active Link on Scroll (ScrollSpy)
-const sections = document.querySelectorAll('section');
-const navItems = document.querySelectorAll('.nav-links a');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        // إذا كان الماوس واقف داخل حدود السكشن
-        if (pageYOffset >= (sectionTop - 150)) {
-            current = section.getAttribute('id');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            
+            // بنلف على اللينكات وبنغير الـ active بوضوح ومن غير ما نلمس الـ ul بتاعة الموبايل
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                if (link.getAttribute('href') === `#${id}`) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
         }
     });
+}, observerOptions);
 
-    navItems.forEach(a => {
-        a.classList.remove('active');
-        if (a.getAttribute('href') === `#${current}`) {
-            a.classList.add('active');
-        }
-    });
+// تشغيل المراقبة على كل الأقسام المتاحة في الصفحة
+document.querySelectorAll('section, header, div[id]').forEach(section => {
+    if(section.getAttribute('id')) {
+        observer.observe(section);
+    }
 });
-
 // Scroll Reveal Animation Script
 function revealOnScroll() {
     const reveals = document.querySelectorAll('.reveal');
